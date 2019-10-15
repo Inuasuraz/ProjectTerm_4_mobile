@@ -26,8 +26,11 @@ class MainFragment : Fragment() {
             R.layout.fragment_main,container,false)
 
         binding.apply{
-            OKButton.setOnClickListener { findNavController()
+            okButton.setOnClickListener { findNavController()
                 .navigate(R.id.action_mainFragment_to_menuFragment) }
+
+            aboutButton.setOnClickListener { findNavController()
+                .navigate(R.id.action_main_to_about) }
         }
 
 
