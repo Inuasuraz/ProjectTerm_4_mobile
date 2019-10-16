@@ -3,4 +3,46 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Button -->
+    <string name="BackButton">BACK</string>
+    <string name="OKButton">OK</string>
+    <string name="PlayButton">PLAY THE GAME</string>
+    <string name="ScoreButton">HIGH SCORE</string>
+
+
+    <!-- Text Main -->
+    <string name="TitleMain">Do you know Your Computer ?</string>
+    <string name="QuestionMain">What is your name ?</string>
+    <string name="InputMain">Input your name</string>
+    <string name="AboutMain">?</string>
+
+    <!-- Text About -->
+    <string name="AboutText">About this game</string>
+
+    <!-- Text Game -->
+    <string name="InputGame">Input your number</string>
+    <string name="TitleGame">Do you know me ?</string>
+    <string name="ScoreGame">score : 0</string>
+
+    <!-- Text Score -->
+    <string name="TitleScore">High Score</string>
+    <string name="NameText">Name</string>
+    <string name="ScoreText">Score</string>
+    <string name="Name1">name</string>
+    <string name="Name2">name</string>
+    <string name="Name3">name</string>
+    <string name="Name4">name</string>
+    <string name="Name5">name</string>
+    <string name="Score1">score</string>
+    <string name="Score2">score</string>
+    <string name="Score3">score</string>
+    <string name="Score4">score</string>
+    <string name="Score5">score</string>
+
+
+
+
+
+
 </resources>
