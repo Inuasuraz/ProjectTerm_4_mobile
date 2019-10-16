@@ -23,7 +23,8 @@
     <!-- Text Game -->
     <string name="InputGame">Input your number</string>
     <string name="TitleGame">Do you know me ?</string>
-    <string name="ScoreGame">score : 0</string>
+    <string name="ScoreNumber">0</string>
+    <string name="ScoreGame">score : </string>
 
     <!-- Text Score -->
     <string name="TitleScore">High Score</string>
