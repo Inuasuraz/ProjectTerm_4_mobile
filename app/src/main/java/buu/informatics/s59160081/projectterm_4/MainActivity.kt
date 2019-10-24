@@ -9,6 +9,8 @@ import buu.informatics.s59160081.projectterm_4.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private val Player: Player = Player()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

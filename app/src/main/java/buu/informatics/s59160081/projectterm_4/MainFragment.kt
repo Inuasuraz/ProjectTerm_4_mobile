@@ -33,6 +33,7 @@ class MainFragment : Fragment() {
 
             aboutButton.setOnClickListener { findNavController()
                 .navigate(R.id.action_main_to_about) }
+
         }
 
 
@@ -43,6 +44,12 @@ class MainFragment : Fragment() {
      fun checkName(fragment: FragmentMainBinding){
         fragment.apply{
             if (editText.text.length >= 3){
+//                Player.name = editText.text.toString()
+//                Player.score = "0"
+//                Player.
+
+//                Toast.makeText(activity, Player.getName(), Toast.LENGTH_LONG).show()
+
                 findNavController()
                     .navigate(R.id.action_mainFragment_to_menuFragment)
             }else{

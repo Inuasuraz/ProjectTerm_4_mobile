@@ -23,6 +23,7 @@ import java.util.*
 class GameFragment : Fragment() {
 
     private lateinit var binding: FragmentGameBinding
+    private val Player : Player = Player()
     private var question = 0
     private var round = 0
 
@@ -39,8 +40,6 @@ class GameFragment : Fragment() {
             NumberImage.setImageResource(R.drawable.questionmark)
             okButton.setOnClickListener { checkAnswer(binding) }
         }
-
-
         return binding.root
     }
 
@@ -49,6 +48,9 @@ class GameFragment : Fragment() {
 
         fragment.apply {
 //            var randomInt = Random().nextInt(10) + 1
+
+//            Toast.makeText(activity, Player.getName(),Toast.LENGTH_LONG).show()
+
             var randomInt = 5
 
             val drawableResource = when (randomInt) {
@@ -70,7 +72,7 @@ class GameFragment : Fragment() {
             if (InputField.text.toString().equals(randomInt.toString())) {
                 ScoreNumber.text = (question + 1).toString()
                 question = question + 1
-                Toast.makeText(activity, "True", Toast.LENGTH_LONG).show()
+//                Toast.makeText(activity, "True", Toast.LENGTH_LONG).show()
             }else{
                 Toast.makeText(activity, "False", Toast.LENGTH_LONG).show()
             }

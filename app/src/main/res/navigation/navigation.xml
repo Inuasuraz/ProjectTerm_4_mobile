@@ -3,57 +3,69 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/MainFragment">
 
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/MainFragment"
         android:name="buu.informatics.s59160081.projectterm_4.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_menuFragment"
-            app:destination="@id/menuFragment" />
+            app:destination="@id/MenuFragment" />
         <action
             android:id="@+id/action_main_to_about"
-            app:destination="@id/aboutFragment" />
+            app:destination="@id/AboutFragment" />
     </fragment>
     <fragment
-        android:id="@+id/menuFragment"
+        android:id="@+id/MenuFragment"
         android:name="buu.informatics.s59160081.projectterm_4.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
             android:id="@+id/action_menu_to_game"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/GameFragment" />
         <action
             android:id="@+id/action_menu_to_score"
-            app:destination="@id/scoreFragment" />
+            app:destination="@id/ScoreFragment" />
     </fragment>
     <fragment
-        android:id="@+id/gameFragment"
+        android:id="@+id/GameFragment"
         android:name="buu.informatics.s59160081.projectterm_4.GameFragment"
         android:label="fragment_game"
         tools:layout="@layout/fragment_game" >
         <action
             android:id="@+id/action_gameFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/MainFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_showScoreFragment"
+            app:destination="@id/ShowScoreFragment" />
     </fragment>
     <fragment
-        android:id="@+id/scoreFragment"
+        android:id="@+id/ScoreFragment"
         android:name="buu.informatics.s59160081.projectterm_4.ScoreFragment"
         android:label="fragment_score"
         tools:layout="@layout/fragment_score" >
         <action
             android:id="@+id/action_scoreFragment_to_menuFragment"
-            app:destination="@id/menuFragment" />
+            app:destination="@id/MenuFragment" />
     </fragment>
     <fragment
-        android:id="@+id/aboutFragment"
+        android:id="@+id/AboutFragment"
         android:name="buu.informatics.s59160081.projectterm_4.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" >
         <action
             android:id="@+id/action_aboutFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/MainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ShowScoreFragment"
+        android:name="buu.informatics.s59160081.projectterm_4.ShowScoreFragment"
+        android:label="fragment_show_score"
+        tools:layout="@layout/fragment_show_score" >
+        <action
+            android:id="@+id/action_showScoreFragment_to_mainFragment"
+            app:destination="@id/MainFragment" />
     </fragment>
 </navigation>

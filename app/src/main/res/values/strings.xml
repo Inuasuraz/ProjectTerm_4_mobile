@@ -26,6 +26,13 @@
     <string name="ScoreNumber">0</string>
     <string name="ScoreGame">score : </string>
 
+    <!-- Text Your Score -->
+    <string name="TitleYourScore">Your Score</string>
+    <string name="ResultText">0</string>
+
+    <!-- Text Show Score -->
+    <string name="YourRank">Your rank is NN</string>
+
     <!-- Text Score -->
     <string name="TitleScore">High Score</string>
     <string name="NameText">Name</string>
@@ -40,10 +47,6 @@
     <string name="Score3">score</string>
     <string name="Score4">score</string>
     <string name="Score5">score</string>
-
-
-
-
 
 
 </resources>
