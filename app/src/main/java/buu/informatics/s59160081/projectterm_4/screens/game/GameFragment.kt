@@ -1,8 +1,7 @@
-package buu.informatics.s59160081.projectterm_4
+package buu.informatics.s59160081.projectterm_4.screens.game
 
 
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,10 +10,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
+import buu.informatics.s59160081.projectterm_4.R
 import buu.informatics.s59160081.projectterm_4.databinding.FragmentGameBinding
-import buu.informatics.s59160081.projectterm_4.databinding.FragmentMainBinding
-import kotlinx.android.synthetic.main.fragment_game.*
-import kotlinx.android.synthetic.main.fragment_score.*
+import buu.informatics.s59160081.projectterm_4.screens.menu.MenuFragmentArgs
+import buu.informatics.s59160081.projectterm_4.screens.menu.MenuFragmentDirections
 import java.util.*
 
 /**
@@ -23,7 +22,6 @@ import java.util.*
 class GameFragment : Fragment() {
 
     private lateinit var binding: FragmentGameBinding
-    private val Player : Player = Player()
     private var question = 0
     private var round = 0
 
@@ -46,12 +44,14 @@ class GameFragment : Fragment() {
 
     private fun checkAnswer(fragment: FragmentGameBinding) {
 
+        val args = GameFragmentArgs.fromBundle(arguments!!)
+
         fragment.apply {
-//            var randomInt = Random().nextInt(10) + 1
+            var randomInt = Random().nextInt(9) + 1
 
 //            Toast.makeText(activity, Player.getName(),Toast.LENGTH_LONG).show()
 
-            var randomInt = 5
+//            var randomInt = 5
 
             val drawableResource = when (randomInt) {
                 1 -> R.drawable.num_1
@@ -62,8 +62,8 @@ class GameFragment : Fragment() {
                 6 -> R.drawable.num_6
                 7 -> R.drawable.num_7
                 8 -> R.drawable.num_8
-                9 -> R.drawable.num_9
-                else -> R.drawable.num_10
+                else -> R.drawable.num_9
+//                else -> R.drawable.num_10
             }
 
 
@@ -87,8 +87,13 @@ class GameFragment : Fragment() {
                 round = round + 1
 
                 if (round == 10){
-                findNavController()
-                    .navigate(R.id.action_gameFragment_to_mainFragment)
+//                findNavController()
+//                    .navigate(R.id.action_gameFragment_to_mainFragment)
+
+                    var userscore = ScoreNumber.text.toString().toInt()
+
+                    findNavController()
+                        .navigate(GameFragmentDirections.actionGameFragmentToShowScoreFragment( args.username , userscore))
             }
             }, 1000)
 

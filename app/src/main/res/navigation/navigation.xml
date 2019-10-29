@@ -7,19 +7,16 @@
 
     <fragment
         android:id="@+id/MainFragment"
-        android:name="buu.informatics.s59160081.projectterm_4.MainFragment"
+        android:name="buu.informatics.s59160081.projectterm_4.screens.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_menuFragment"
             app:destination="@id/MenuFragment" />
-        <action
-            android:id="@+id/action_main_to_about"
-            app:destination="@id/AboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/MenuFragment"
-        android:name="buu.informatics.s59160081.projectterm_4.MenuFragment"
+        android:name="buu.informatics.s59160081.projectterm_4.screens.menu.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
@@ -28,10 +25,16 @@
         <action
             android:id="@+id/action_menu_to_score"
             app:destination="@id/ScoreFragment" />
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="userscore"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/GameFragment"
-        android:name="buu.informatics.s59160081.projectterm_4.GameFragment"
+        android:name="buu.informatics.s59160081.projectterm_4.screens.game.GameFragment"
         android:label="fragment_game"
         tools:layout="@layout/fragment_game" >
         <action
@@ -40,19 +43,31 @@
         <action
             android:id="@+id/action_gameFragment_to_showScoreFragment"
             app:destination="@id/ShowScoreFragment" />
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="userscore"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/ScoreFragment"
-        android:name="buu.informatics.s59160081.projectterm_4.ScoreFragment"
+        android:name="buu.informatics.s59160081.projectterm_4.screens.score.ScoreFragment"
         android:label="fragment_score"
         tools:layout="@layout/fragment_score" >
         <action
             android:id="@+id/action_scoreFragment_to_menuFragment"
             app:destination="@id/MenuFragment" />
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="userscore"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/AboutFragment"
-        android:name="buu.informatics.s59160081.projectterm_4.AboutFragment"
+        android:name="buu.informatics.s59160081.projectterm_4.screens.about.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" >
         <action
@@ -61,11 +76,17 @@
     </fragment>
     <fragment
         android:id="@+id/ShowScoreFragment"
-        android:name="buu.informatics.s59160081.projectterm_4.ShowScoreFragment"
+        android:name="buu.informatics.s59160081.projectterm_4.screens.show_score.ShowScoreFragment"
         android:label="fragment_show_score"
         tools:layout="@layout/fragment_show_score" >
         <action
             android:id="@+id/action_showScoreFragment_to_mainFragment"
             app:destination="@id/MainFragment" />
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="userscore"
+            app:argType="integer" />
     </fragment>
 </navigation>

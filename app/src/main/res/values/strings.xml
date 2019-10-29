@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjectTerm_4</string>
+    <string name="app_name"> </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -19,6 +19,9 @@
 
     <!-- Text About -->
     <string name="AboutText">About this game</string>
+    <string name="about_button">About</string>
+    <string name="about_text">  Application นี้ถูกสร้างมาเพื่อส่งงานในรายวิชา 88634559-59 Mobile Application Development II \n\n
+        ห้ามนำไปเผยแพร่ หรือ นำไปใช้โดยไม่ได้รับอนุญาติ โดยที่ Application นี้ถูกพัฒนาขึ้นโดย \n\nนายเกียรติศิริ ศรินทุ \nรหัสนิสิต 59160081</string>
 
     <!-- Text Game -->
     <string name="InputGame">Input your number</string>

@@ -1,4 +1,4 @@
-package buu.informatics.s59160081.projectterm_4
+package buu.informatics.s59160081.projectterm_4.screens.score
 
 
 import android.os.Bundle
@@ -8,9 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
-import buu.informatics.s59160081.projectterm_4.databinding.FragmentMainBinding
+import buu.informatics.s59160081.projectterm_4.R
 import buu.informatics.s59160081.projectterm_4.databinding.FragmentScoreBinding
-import kotlinx.android.synthetic.main.fragment_score.*
+import buu.informatics.s59160081.projectterm_4.screens.menu.MenuFragmentArgs
+import buu.informatics.s59160081.projectterm_4.screens.menu.MenuFragmentDirections
 
 /**
  * A simple [Fragment] subclass.
@@ -23,12 +24,18 @@ class ScoreFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
+        val args = ScoreFragmentArgs.fromBundle(arguments!!)
+
         val binding = DataBindingUtil.inflate<FragmentScoreBinding>(inflater,
             R.layout.fragment_score,container,false)
 
         binding.apply{
+//            backButton.setOnClickListener { findNavController()
+//                .navigate(R.id.action_scoreFragment_to_menuFragment) }
+
             backButton.setOnClickListener { findNavController()
-                .navigate(R.id.action_scoreFragment_to_menuFragment) }
+                .navigate(ScoreFragmentDirections.actionScoreFragmentToMenuFragment( args.username , args.userscore )) }
+
         }
 
         return binding.root
