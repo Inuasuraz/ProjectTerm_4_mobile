@@ -24,6 +24,7 @@ class GameFragment : Fragment() {
     private lateinit var binding: FragmentGameBinding
     private var question = 0
     private var round = 0
+    private var ans = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +37,33 @@ class GameFragment : Fragment() {
 
         binding.apply{
             NumberImage.setImageResource(R.drawable.questionmark)
-            okButton.setOnClickListener { checkAnswer(binding) }
+            imageButton.setOnClickListener {
+                ans = 1
+                checkAnswer(binding) }
+            imageButton2.setOnClickListener {
+                ans = 2
+                checkAnswer(binding) }
+            imageButton3.setOnClickListener {
+                ans = 3
+                checkAnswer(binding) }
+            imageButton4.setOnClickListener {
+                ans = 4
+                checkAnswer(binding) }
+            imageButton5.setOnClickListener {
+                ans = 5
+                checkAnswer(binding) }
+            imageButton6.setOnClickListener {
+                ans = 6
+                checkAnswer(binding) }
+            imageButton7.setOnClickListener {
+                ans = 7
+                checkAnswer(binding) }
+            imageButton8.setOnClickListener {
+                ans = 8
+                checkAnswer(binding) }
+            imageButton9.setOnClickListener {
+                ans = 9
+                checkAnswer(binding) }
         }
         return binding.root
     }
@@ -69,20 +96,36 @@ class GameFragment : Fragment() {
 
             NumberImage.setImageResource(drawableResource)
 
-            if (InputField.text.toString().equals(randomInt.toString())) {
+            if (ans == randomInt) {
                 ScoreNumber.text = (question + 1).toString()
                 question = question + 1
 //                Toast.makeText(activity, "True", Toast.LENGTH_LONG).show()
             }else{
-                Toast.makeText(activity, "False", Toast.LENGTH_LONG).show()
+//                Toast.makeText(activity, "False", Toast.LENGTH_LONG).show()
             }
 
-            okButton.isEnabled = false
+            imageButton.isEnabled = false
+            imageButton2.isEnabled = false
+            imageButton3.isEnabled = false
+            imageButton4.isEnabled = false
+            imageButton5.isEnabled = false
+            imageButton6.isEnabled = false
+            imageButton7.isEnabled = false
+            imageButton8.isEnabled = false
+            imageButton9.isEnabled = false
             val handler = Handler()
             handler.postDelayed({
                 // do something after 1000ms
                 NumberImage.setImageResource(R.drawable.questionmark)
-                okButton.isEnabled = true
+                imageButton.isEnabled = true
+                imageButton2.isEnabled = true
+                imageButton3.isEnabled = true
+                imageButton4.isEnabled = true
+                imageButton5.isEnabled = true
+                imageButton6.isEnabled = true
+                imageButton7.isEnabled = true
+                imageButton8.isEnabled = true
+                imageButton9.isEnabled = true
 
                 round = round + 1
 
