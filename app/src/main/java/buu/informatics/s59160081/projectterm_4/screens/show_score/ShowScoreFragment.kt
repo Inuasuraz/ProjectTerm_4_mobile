@@ -99,5 +99,4 @@ class ShowScoreFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-
 }

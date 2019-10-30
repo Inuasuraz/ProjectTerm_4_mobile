@@ -2,6 +2,7 @@ package buu.informatics.s59160081.projectterm_4.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -41,5 +42,30 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         return
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("Lifecycle","onStart called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("Lifecycle","onResume Called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("Lifecycle","onPause Called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("Lifecycle","onStop Called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("Lifecycle","onDestroy Called")
     }
 }
