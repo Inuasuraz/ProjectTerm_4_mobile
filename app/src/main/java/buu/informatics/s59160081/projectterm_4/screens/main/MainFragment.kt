@@ -48,7 +48,7 @@ class MainFragment : Fragment() {
 
      fun checkName(fragment: FragmentMainBinding){
         fragment.apply{
-            if (editText.text.length >= 3){
+            if (editText.text.length >= 4 && editText.text.length <= 8){
 //                viewModel.name.postValue(editText.text.toString())
 
 //                 viewModel.updateName(editText.text.toString())
@@ -67,7 +67,7 @@ class MainFragment : Fragment() {
                 findNavController()
                     .navigate(MainFragmentDirections.actionMainFragmentToMenuFragment( username , userscore ))
             }else{
-                Toast.makeText(activity, "Name length must more than 3 character", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, "Name length must be 4-8 character", Toast.LENGTH_LONG).show()
             }
         }
     }

@@ -51,7 +51,7 @@ class MenuFragment : Fragment() {
 //                .navigate(R.id.action_menu_to_score) }
         }
 
-        Toast.makeText(activity, args.username + " " + args.userscore, Toast.LENGTH_LONG).show()
+//        Toast.makeText(activity, args.username + " " + args.userscore, Toast.LENGTH_LONG).show()
 
 //        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 //
