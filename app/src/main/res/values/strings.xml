@@ -35,6 +35,8 @@
 
     <!-- Text Show Score -->
     <string name="YourRank">Your rank is NN</string>
+    <string name="share_item">share</string>
+    <string name="share_success_text"> My score is %1$d!! From Do you know your computer App</string>
 
     <!-- Text Score -->
     <string name="TitleScore">High Score</string>
