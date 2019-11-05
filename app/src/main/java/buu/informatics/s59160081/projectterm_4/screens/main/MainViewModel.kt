@@ -1,6 +1,7 @@
 package buu.informatics.s59160081.projectterm_4.screens.main
 
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -23,11 +24,16 @@ class MainViewModel : ViewModel(){
     val checkNameProcess: LiveData<Boolean>
         get() = _checkNameProcess
 
+    val _showPopup = MutableLiveData<Boolean>()
+    val showPopup: LiveData<Boolean>
+        get() = _showPopup
+
     init {
         Log.i("MainViewModel", "MainViewModel created!")
         _score.value = 0
         _eventInputFinish.value = false
         _eventInputFinish.value = true
+        _showPopup.value = false
     }
 
     override fun onCleared() {
@@ -40,7 +46,7 @@ class MainViewModel : ViewModel(){
     }
 
     fun checkName(name : String){
-        Log.i("TEST", "user ${name}" )
+        Log.i("TEST", "user ${name} + length : ${name.length}")
             if (name.length >= 4 && name.length <= 8) {
 
                 var username = name
@@ -50,6 +56,9 @@ class MainViewModel : ViewModel(){
                 Log.i("MainFragment", "Userscore : ${userscore}")
 
                 _checkNameProcess.value = true
+            }else if ((name.length <= 3 || name.length >= 9 ) && name.length != 0){
+                _showPopup.value = true
             }
+
     }
 }

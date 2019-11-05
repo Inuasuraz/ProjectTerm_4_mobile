@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="gameViewModel"
+            type="buu.informatics.s59160081.projectterm_4.screens.game.GameViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout4"
         android:layout_width="match_parent"
@@ -71,7 +77,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/NumberImage"
-            app:srcCompat="@drawable/but_8" />
+            app:srcCompat="@drawable/but_8"
+            android:onClick="@{ () -> gameViewModel.checkAnswer(8)}"
+            />
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -83,7 +91,8 @@
             android:scaleType="fitCenter"
             app:layout_constraintStart_toEndOf="@+id/imageButton2"
             app:layout_constraintTop_toBottomOf="@+id/NumberImage"
-            app:srcCompat="@drawable/but_3" />
+            app:srcCompat="@drawable/but_3"
+            android:onClick="@{ () -> gameViewModel.checkAnswer(3)}"/>
 
         <ImageButton
             android:id="@+id/imageButton2"
@@ -95,7 +104,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/NumberImage"
-            app:srcCompat="@drawable/but_2" />
+            app:srcCompat="@drawable/but_2"
+            android:onClick="@{ () -> gameViewModel.checkAnswer(2)}"/>
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -107,7 +117,8 @@
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toStartOf="@+id/imageButton2"
             app:layout_constraintTop_toBottomOf="@+id/NumberImage"
-            app:srcCompat="@drawable/but_1" />
+            app:srcCompat="@drawable/but_1"
+            android:onClick="@{ () -> gameViewModel.checkAnswer(1)}"/>
 
         <ImageButton
             android:id="@+id/imageButton4"
@@ -119,7 +130,8 @@
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toStartOf="@+id/imageButton5"
             app:layout_constraintTop_toBottomOf="@+id/NumberImage"
-            app:srcCompat="@drawable/but_4" />
+            app:srcCompat="@drawable/but_4"
+            android:onClick="@{ () -> gameViewModel.checkAnswer(4)}"/>
 
         <ImageButton
             android:id="@+id/imageButton5"
@@ -131,7 +143,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/NumberImage"
-            app:srcCompat="@drawable/but_5" />
+            app:srcCompat="@drawable/but_5"
+            android:onClick="@{ () -> gameViewModel.checkAnswer(5)}"/>
 
         <ImageButton
             android:id="@+id/imageButton6"
@@ -143,7 +156,8 @@
             android:scaleType="fitCenter"
             app:layout_constraintStart_toEndOf="@+id/imageButton5"
             app:layout_constraintTop_toBottomOf="@+id/NumberImage"
-            app:srcCompat="@drawable/but_6" />
+            app:srcCompat="@drawable/but_6"
+            android:onClick="@{ () -> gameViewModel.checkAnswer(6)}"/>
 
         <ImageButton
             android:id="@+id/imageButton9"
@@ -155,7 +169,8 @@
             android:scaleType="fitCenter"
             app:layout_constraintStart_toEndOf="@+id/imageButton8"
             app:layout_constraintTop_toBottomOf="@+id/NumberImage"
-            app:srcCompat="@drawable/but_9" />
+            app:srcCompat="@drawable/but_9"
+            android:onClick="@{ () -> gameViewModel.checkAnswer(9)}"/>
 
         <ImageButton
             android:id="@+id/imageButton7"
@@ -167,7 +182,8 @@
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toStartOf="@+id/imageButton8"
             app:layout_constraintTop_toBottomOf="@+id/NumberImage"
-            app:srcCompat="@drawable/but_7" />
+            app:srcCompat="@drawable/but_7"
+            android:onClick="@{ () -> gameViewModel.checkAnswer(7)}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

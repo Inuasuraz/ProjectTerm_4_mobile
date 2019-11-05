@@ -49,9 +49,12 @@ class MainFragment : Fragment() {
                 findNavController()
                     .navigate(MainFragmentDirections.actionMainFragmentToMenuFragment( editText.text.toString(), 0 ))
             }
-            else {
+        })
+
+        viewModel.showPopup.observe(this, Observer<Boolean> { hasFinished ->
+            if (hasFinished) {
                 Toast.makeText(activity, "Name length must be 4-8 character", Toast.LENGTH_LONG).show()
-                viewModel._checkNameProcess.value = false
+                viewModel._showPopup.value = false
             }
         })
 
