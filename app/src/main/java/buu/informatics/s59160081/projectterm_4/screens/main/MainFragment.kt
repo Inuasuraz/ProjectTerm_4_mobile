@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -15,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import buu.informatics.s59160081.projectterm_4.R
 import buu.informatics.s59160081.projectterm_4.databinding.FragmentMainBinding
+import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
  * A simple [Fragment] subclass.
@@ -28,48 +30,37 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
         val binding = DataBindingUtil.inflate<FragmentMainBinding>(inflater,
             R.layout.fragment_main,container,false)
 
-        binding.apply{
-            okButton.setOnClickListener { checkName(binding) }
-        }
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+
+        binding.mainViewModel = viewModel
+
+        binding.lifecycleOwner = this
+
+        viewModel.eventInputFinish.observe(this, Observer<Boolean> { hasFinished ->
+            if (hasFinished) viewModel.checkName(editText.text.toString())
+        })
+
+        viewModel.checkNameProcess.observe(this, Observer<Boolean> { hasFinished ->
+            if (hasFinished) {
+                findNavController()
+                    .navigate(MainFragmentDirections.actionMainFragmentToMenuFragment( editText.text.toString(), 0 ))
+            }
+            else {
+                Toast.makeText(activity, "Name length must be 4-8 character", Toast.LENGTH_LONG).show()
+                viewModel._checkNameProcess.value = false
+            }
+        })
+
 
         setHasOptionsMenu(true)
 
         Log.i("MainFragment", "Called ViewModelProviders.of")
-//        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
         return binding.root
-    }
-
-
-     fun checkName(fragment: FragmentMainBinding){
-        fragment.apply{
-            if (editText.text.length >= 4 && editText.text.length <= 8){
-//                viewModel.name.postValue(editText.text.toString())
-
-//                 viewModel.updateName(editText.text.toString())
-
-//                Toast.makeText(activity, viewModel.name.value, Toast.LENGTH_LONG).show()
-
-//                findNavController()
-//                    .navigate(R.id.action_mainFragment_to_menuFragment)
-
-                var username = editText.text.toString()
-                var userscore = 0
-
-                Log.i("MainFragment", "Username : ${username}")
-                Log.i("MainFragment", "Userscore : ${userscore}")
-
-                findNavController()
-                    .navigate(MainFragmentDirections.actionMainFragmentToMenuFragment( username , userscore ))
-            }else{
-                Toast.makeText(activity, "Name length must be 4-8 character", Toast.LENGTH_LONG).show()
-            }
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -82,8 +73,5 @@ class MainFragment : Fragment() {
             view!!.findNavController())
                 || super.onOptionsItemSelected(item)
     }
-
-
-
 
 }

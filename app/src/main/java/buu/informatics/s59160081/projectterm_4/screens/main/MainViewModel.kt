@@ -5,19 +5,29 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
+
 class MainViewModel : ViewModel(){
 
-    private val _name = MutableLiveData<String>()
-    val name: MutableLiveData<String>
+    val _name = MutableLiveData<String>()
+    val name: LiveData<String>
         get() = _name
-    private val _score = MutableLiveData<Int>()
-    val score: MutableLiveData<Int>
+    val _score = MutableLiveData<Int>()
+    val score: LiveData<Int>
         get() = _score
+
+    private val _eventInputFinish = MutableLiveData<Boolean>()
+    val eventInputFinish: LiveData<Boolean>
+        get() = _eventInputFinish
+
+    val _checkNameProcess = MutableLiveData<Boolean>()
+    val checkNameProcess: LiveData<Boolean>
+        get() = _checkNameProcess
 
     init {
         Log.i("MainViewModel", "MainViewModel created!")
-        _name.value = ""
         _score.value = 0
+        _eventInputFinish.value = false
+        _eventInputFinish.value = true
     }
 
     override fun onCleared() {
@@ -25,13 +35,21 @@ class MainViewModel : ViewModel(){
         Log.i("GameViewModel", "GameViewModel destroyed!")
     }
 
-    fun updateName(update: String) {
-        _name.value = update
+    fun checkInput(){
+        _eventInputFinish.value = true
     }
 
-    fun getUserName(): LiveData<String> {
-        return _name
+    fun checkName(name : String){
+        Log.i("TEST", "user ${name}" )
+            if (name.length >= 4 && name.length <= 8) {
+
+                var username = name
+                var userscore = 0
+
+                Log.i("MainFragment", "Username : ${username}")
+                Log.i("MainFragment", "Userscore : ${userscore}")
+
+                _checkNameProcess.value = true
+            }
     }
-
-
 }

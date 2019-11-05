@@ -25,17 +25,6 @@ class MainActivity : AppCompatActivity() {
         )
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-//        val nameObserver = Observer<String> { newName ->
-//            // Update the UI, in this case, a TextView.
-////            playButton.text = newName
-//            ResultText.text = newName
-//        }
-//        viewModel.name.observe(this, nameObserver)
-
-//
-//        viewModel.getUserName().observe(this, Observer {
-//                user -> Toast.makeText(this, viewModel.name.value, Toast.LENGTH_LONG).show()
-//        })
 
         this.findNavController(R.id.myNavHostFragment)
     }
