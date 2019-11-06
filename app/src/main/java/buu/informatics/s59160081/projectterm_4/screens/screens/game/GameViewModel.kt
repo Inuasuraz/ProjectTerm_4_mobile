@@ -1,20 +1,14 @@
-package buu.informatics.s59160081.projectterm_4.screens.game
+package buu.informatics.s59160081.projectterm_4.screens.screens.game
 
 import android.os.Handler
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.navigation.fragment.findNavController
 import buu.informatics.s59160081.projectterm_4.R
-import buu.informatics.s59160081.projectterm_4.databinding.FragmentGameBinding
 import java.util.*
 
 class GameViewModel : ViewModel() {
-
-//    private var question = 0
-//    private var round = 0
-//    private var ans = 0
 
     val _eventChooseFinish = MutableLiveData<Boolean>()
     val eventChooseFinish: LiveData<Boolean>
@@ -80,15 +74,12 @@ class GameViewModel : ViewModel() {
         val handler = Handler()
         handler.postDelayed({
             // do something after 1000ms
-
             _round.value = _round.value!! + 1
-
             if (_round.value == 10){
                 _eventGameFinish.value = true
             }
                 _eventTimeFinish.value = true
         }, 1000)
     }
-
 
 }

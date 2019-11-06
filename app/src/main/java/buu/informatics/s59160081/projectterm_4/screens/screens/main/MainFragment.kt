@@ -1,4 +1,4 @@
-package buu.informatics.s59160081.projectterm_4.screens.main
+package buu.informatics.s59160081.projectterm_4.screens.screens.main
 
 
 import android.os.Bundle
@@ -7,11 +7,9 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import buu.informatics.s59160081.projectterm_4.R
@@ -47,7 +45,12 @@ class MainFragment : Fragment() {
         viewModel.checkNameProcess.observe(this, Observer<Boolean> { hasFinished ->
             if (hasFinished) {
                 findNavController()
-                    .navigate(MainFragmentDirections.actionMainFragmentToMenuFragment( editText.text.toString(), 0 ))
+                    .navigate(
+                        MainFragmentDirections.actionMainFragmentToMenuFragment(
+                            editText.text.toString(),
+                            0
+                        )
+                    )
             }
         })
 

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="gameViewModel"
-            type="buu.informatics.s59160081.projectterm_4.screens.game.GameViewModel" />
+            type="buu.informatics.s59160081.projectterm_4.screens.screens.game.GameViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/wallpaper_1"
-        tools:context=".screens.game.GameFragment">
+        tools:context=".screens.screens.game.GameFragment">
 
         <TextView
             android:id="@+id/textView6"

@@ -1,11 +1,10 @@
-package buu.informatics.s59160081.projectterm_4.screens.score
+package buu.informatics.s59160081.projectterm_4.screens.screens.score
 
 import android.graphics.Color
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import buu.informatics.s59160081.projectterm_4.R
 

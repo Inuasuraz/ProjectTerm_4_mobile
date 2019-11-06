@@ -1,4 +1,4 @@
-package buu.informatics.s59160081.projectterm_4.screens.about
+package buu.informatics.s59160081.projectterm_4.screens.screens.about
 
 
 import android.os.Bundle

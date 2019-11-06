@@ -1,4 +1,4 @@
-package buu.informatics.s59160081.projectterm_4.screens.main
+package buu.informatics.s59160081.projectterm_4.screens.screens.main
 
 import android.util.Log
 import android.widget.Toast
@@ -52,8 +52,7 @@ class MainViewModel : ViewModel(){
                 var username = name
                 var userscore = 0
 
-                Log.i("MainFragment", "Username : ${username}")
-                Log.i("MainFragment", "Userscore : ${userscore}")
+                Log.i("MainFragment", "Username : ${username} Userscore : ${userscore}")
 
                 _checkNameProcess.value = true
             }else if ((name.length <= 3 || name.length >= 9 ) && name.length != 0){

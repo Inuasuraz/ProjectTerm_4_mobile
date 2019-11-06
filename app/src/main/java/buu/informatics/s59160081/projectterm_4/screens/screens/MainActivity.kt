@@ -1,17 +1,14 @@
-package buu.informatics.s59160081.projectterm_4.screens
+package buu.informatics.s59160081.projectterm_4.screens.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import buu.informatics.s59160081.projectterm_4.R
 import buu.informatics.s59160081.projectterm_4.databinding.ActivityMainBinding
-import buu.informatics.s59160081.projectterm_4.screens.main.MainViewModel
-import kotlinx.android.synthetic.main.fragment_game.*
-import kotlinx.android.synthetic.main.fragment_menu.*
+import buu.informatics.s59160081.projectterm_4.screens.screens.main.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 

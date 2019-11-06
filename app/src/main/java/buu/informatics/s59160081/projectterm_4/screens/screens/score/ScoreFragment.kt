@@ -1,20 +1,15 @@
-package buu.informatics.s59160081.projectterm_4.screens.score
+package buu.informatics.s59160081.projectterm_4.screens.screens.score
 
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import buu.informatics.s59160081.projectterm_4.R
 import buu.informatics.s59160081.projectterm_4.databinding.FragmentScoreBinding
-import buu.informatics.s59160081.projectterm_4.screens.menu.MenuFragmentArgs
-import buu.informatics.s59160081.projectterm_4.screens.menu.MenuFragmentDirections
 
 /**
  * A simple [Fragment] subclass.
@@ -27,7 +22,10 @@ class ScoreFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        val args = ScoreFragmentArgs.fromBundle(arguments!!)
+        val args =
+            ScoreFragmentArgs.fromBundle(
+                arguments!!
+            )
 
         val adapter = ScoreAdapter()
 
@@ -41,7 +39,12 @@ class ScoreFragment : Fragment() {
             highscoreList.adapter = adapter
 
             backButton.setOnClickListener { findNavController()
-                .navigate(ScoreFragmentDirections.actionScoreFragmentToMenuFragment( args.username , args.userscore )) }
+                .navigate(
+                    ScoreFragmentDirections.actionScoreFragmentToMenuFragment(
+                        args.username,
+                        args.userscore
+                    )
+                ) }
 
         }
         binding.setLifecycleOwner(this)

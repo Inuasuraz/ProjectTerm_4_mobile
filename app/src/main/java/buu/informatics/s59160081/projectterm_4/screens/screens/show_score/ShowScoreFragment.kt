@@ -1,4 +1,4 @@
-package buu.informatics.s59160081.projectterm_4.screens.show_score
+package buu.informatics.s59160081.projectterm_4.screens.screens.show_score
 
 
 import android.content.Intent
@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import buu.informatics.s59160081.projectterm_4.R
 import buu.informatics.s59160081.projectterm_4.databinding.FragmentShowScoreBinding
-import kotlinx.android.synthetic.main.fragment_show_score.*
 
 /**
  * A simple [Fragment] subclass.
@@ -25,7 +24,10 @@ class ShowScoreFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        val args = ShowScoreFragmentArgs.fromBundle(arguments!!)
+        val args =
+            ShowScoreFragmentArgs.fromBundle(
+                arguments!!
+            )
 
         val binding = DataBindingUtil.inflate<FragmentShowScoreBinding>(inflater,
             R.layout.fragment_show_score,container,false)
@@ -66,7 +68,8 @@ class ShowScoreFragment : Fragment() {
     }
 
     private fun getShareIntent() : Intent {
-        val args = ShowScoreFragmentArgs.fromBundle(
+        val args =
+            ShowScoreFragmentArgs.fromBundle(
                 arguments!!
             )
         val shareIntent = Intent(Intent.ACTION_SEND)
