@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import buu.informatics.s59160081.projectterm_4.R
 import buu.informatics.s59160081.projectterm_4.databinding.FragmentGameBinding
+import buu.informatics.s59160081.projectterm_4.screens.database.GameScoreDatabase
 import buu.informatics.s59160081.projectterm_4.screens.screens.game.GameFragmentArgs
 import buu.informatics.s59160081.projectterm_4.screens.screens.game.GameFragmentDirections
 import kotlinx.android.synthetic.main.fragment_game.*
@@ -33,7 +34,13 @@ class GameFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
             R.layout.fragment_game,container,false)
 
-        viewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
+        val application = requireNotNull(this.activity).application
+
+        val dataSource = GameScoreDatabase.getInstance(application).gameScoreDatabaseDao
+
+        val viewModelFactory = GameViewModelFactory(dataSource, application)
+
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(GameViewModel::class.java)
 
         binding.gameViewModel = viewModel
 
@@ -51,6 +58,7 @@ class GameFragment : Fragment() {
             if (hasFinished) {
                 binding.NumberImage.setImageResource(viewModel._ImageNumber.value!!)
                 setPicture(false)
+                viewModel._name.value = args.username
                 Log.i("ScoreNum", "name : ${args.username} + score : ${viewModel._score.value!!}")
                 ScoreNumber.text = viewModel._score.value!!.toString()
                 viewModel.timerCheck()

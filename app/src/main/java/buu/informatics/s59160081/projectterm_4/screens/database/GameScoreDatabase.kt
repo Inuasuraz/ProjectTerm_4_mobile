@@ -24,9 +24,7 @@ abstract class GameScoreDatabase : RoomDatabase()  {
                         context.applicationContext,
                         GameScoreDatabase::class.java,
                         "sleep_history_database"
-                    )
-                        .fallbackToDestructiveMigration()
-                        .build()
+                    ).fallbackToDestructiveMigration().build()
                     INSTANCE = instance
                 }
                 // Return instance; smart cast to be non-null.

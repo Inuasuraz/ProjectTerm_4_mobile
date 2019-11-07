@@ -23,7 +23,7 @@ interface GameScoreDatabaseDao {
     @Query("SELECT * FROM game_score_table ORDER BY user_score DESC LIMIT 1")
     fun getGameScore(): GameScore?
 
-    @Query("SELECT * FROM game_score_table ORDER BY user_score DESC")
+    @Query("SELECT * FROM game_score_table ORDER BY gameId DESC")
     fun getAllGameScore(): LiveData<List<GameScore>>
 
 

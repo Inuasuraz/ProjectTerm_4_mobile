@@ -40,7 +40,7 @@
     <!-- Text Score -->
     <string name="TitleScore">High Score</string>
     <string name="NameText">Name</string>
-    <string name="ScoreText">Score</string>
+    <string name="ScoreText">Name and Score</string>
     <string name="Name1">name</string>
     <string name="Name2">name</string>
     <string name="Name3">name</string>
